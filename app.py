@@ -130,6 +130,10 @@ def generate_qr(short_code):
 
     return send_file(img_io, mimetype='image/png')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == '__main__':
     init_db()  # Initialize database before running
     app.run(debug=True)

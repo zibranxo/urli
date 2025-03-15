@@ -1,29 +1,92 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('shorten_page') }}">Shorten URL</a></li>
-            <li><a href="{{ url_for('analytics_page') }}">Analytics</a></li>
-            <li><a href="{{ url_for('qr_page') }}">QR Code</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">URL Shortener</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('shorten_page') }}">Shorten URL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('analytics_page') }}">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('qr_page') }}">QR Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     
-    <h2>Generate QR Code</h2>
-    <form id="qr-form">
-        <input type="text" id="qr-url" placeholder="Enter short URL" required>
-        <button type="submit">Generate QR Code</button>
-    </form>
-    <img id="qr-image" alt="QR Code" style="display: none;">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h2 class="mb-0 fs-4"><i class="fas fa-qrcode me-2"></i>Generate QR Code</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="qr-form">
+                            <div class="input-group mb-3">
+                                <input type="text" id="qr-url" class="form-control form-control-lg" placeholder="Enter short URL or code" required>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-qrcode me-1"></i>Generate
+                                </button>
+                            </div>
+                            <small class="text-muted">Enter either the full short URL (e.g., http://127.0.0.1:5000/abc123) or just the code (e.g., abc123)</small>
+                        </form>
+                        
+                        <div id="qr-result" class="mt-4 text-center" style="display: none;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">Your QR Code</h5>
+                                    <div class="qr-container mb-3">
+                                        <img id="qr-image" class="img-fluid" alt="QR Code" style="max-width: 250px;">
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                        <button id="download-qr" class="btn btn-success">
+                                            <i class="fas fa-download me-1"></i> Download QR Code
+                                        </button>
+                                        <button id="copy-short-url" class="btn btn-secondary">
+                                            <i class="fas fa-copy me-1"></i> Copy URL
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 URL Shortener</p>
+        </div>
+    </footer>
 
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
     <script src="{{ url_for('static', filename='qr.js') }}"></script>
-
-
 </body>
 </html>
