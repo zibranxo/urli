@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('shorten_page') }}">Shorten URL</a></li>
+            <li><a href="{{ url_for('analytics_page') }}">Analytics</a></li>
+            <li><a href="{{ url_for('qr_page') }}">QR Code</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>Welcome to URL Shortener</h1>
+        <p>Shorten your long URLs, track analytics, and generate QR codes.</p>
+    </header>
+    
+    <footer>
+        <p>&copy; 2025 URL Shortener</p>
+    </footer>
+</body>
+</html>

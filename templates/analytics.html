@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('shorten_page') }}">Shorten URL</a></li>
+            <li><a href="{{ url_for('analytics_page') }}">Analytics</a></li>
+            <li><a href="{{ url_for('qr_page') }}">QR Code</a></li>
+        </ul>
+    </nav>
+    
+    <h2>URL Analytics</h2>
+    <button onclick="fetchAnalytics()">Get Analytics</button>
+    <pre id="analytics-data"></pre>
+
+    <script src="{{ url_for('static', filename='analytics.js') }}"></script>
+
+</body>
+</html>

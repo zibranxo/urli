@@ -1,0 +1,32 @@
+# Python & Virtual Environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.env
+.DS_Store
+
+# Flask & Database
+instance/
+urls.db
+
+# Logs & Caches
+*.log
+*.sqlite3
+.cache/
+
+# Node.js & Frontend (if using)
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# VS Code & JetBrains
+.vscode/
+.idea/
+*.swp
+
+# OS-specific files
+Thumbs.db

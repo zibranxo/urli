@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorten URL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('shorten_page') }}">Shorten URL</a></li>
+            <li><a href="{{ url_for('analytics_page') }}">Analytics</a></li>
+            <li><a href="{{ url_for('qr_page') }}">QR Code</a></li>
+        </ul>
+    </nav>
+    
+    <h2>Shorten a URL</h2>
+    <form id="shorten-form">
+        <input type="text" id="long-url" placeholder="Enter long URL" required>
+        <button type="submit">Shorten</button>
+    </form>
+    <p id="shortened-url"></p>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>

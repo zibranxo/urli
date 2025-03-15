@@ -1,0 +1,91 @@
+/* Basic styling for the URL shortener application */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #0066cc;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 60%;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0055aa;
+}
+
+#shortened-url, #analytics-data {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: #666;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+#qr-image {
+    margin-top: 20px;
+    max-width: 250px;
+}
