@@ -14,7 +14,7 @@ def generate_short_code(length=6):
 
 # Initialize the database
 def init_db():
-    if not os.path.exists("urls.db"):  # Check if database file exists
+    if not os.path.exists("urls.db"):
         conn = sqlite3.connect('urls.db')
         c = conn.cursor()
         c.execute('''
@@ -88,7 +88,7 @@ def redirect_url(short_code):
         return redirect(result[0])
     else:
         conn.close()
-        return render_template("404.html"), 404  # Render a 404 page instead of plain text
+        return render_template("404.html"), 404
 
 # Get analytics for a specific short URL
 @app.route('/analytics/<short_code>')
@@ -132,8 +132,8 @@ def generate_qr(short_code):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template('404.html')
 
 if __name__ == '__main__':
-    init_db()  # Initialize database before running
+    init_db()
     app.run(debug=True)

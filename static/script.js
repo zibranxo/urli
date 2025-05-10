@@ -1,4 +1,3 @@
-// This file handles the URL shortening functionality
 document.addEventListener('DOMContentLoaded', function() {
     const shortenForm = document.getElementById('shorten-form');
     const longUrlInput = document.getElementById('long-url');

@@ -1,4 +1,3 @@
-// This file handles the analytics functionality
 document.addEventListener('DOMContentLoaded', function() {
     const loadingElement = document.getElementById('loading');
     const analyticsContainer = document.getElementById('analytics-container');

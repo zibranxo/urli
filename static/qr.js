@@ -1,4 +1,3 @@
-// This file handles the QR code generation functionality
 document.addEventListener('DOMContentLoaded', function() {
     const qrForm = document.getElementById('qr-form');
     const qrUrlInput = document.getElementById('qr-url');
